@@ -301,7 +301,7 @@ def make_optimization_chart(simulations: pd.DataFrame, max_sharpe: pd.Series, mi
             hovertemplate="Min Volatility<br>Return: %{y:.2%}<br>Volatility: %{x:.2%}<extra></extra>",
         )
     )
-    ig.update_layout(
+    fig.update_layout(
         title="Simulated Portfolios",
         xaxis_title="Annualized Volatility",
         yaxis_title="Annualized Return",
