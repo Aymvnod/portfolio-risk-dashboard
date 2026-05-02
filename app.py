@@ -301,13 +301,28 @@ def make_optimization_chart(simulations: pd.DataFrame, max_sharpe: pd.Series, mi
             hovertemplate="Min Volatility<br>Return: %{y:.2%}<br>Volatility: %{x:.2%}<extra></extra>",
         )
     )
-    fig.update_layout(
+    ig.update_layout(
         title="Simulated Portfolios",
         xaxis_title="Annualized Volatility",
         yaxis_title="Annualized Return",
         xaxis_tickformat=".0%",
         yaxis_tickformat=".0%",
-        margin=dict(l=20, r=20, t=60, b=20),
+        height=560,
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.04,
+            xanchor="right",
+            x=1,
+            bgcolor="rgba(255,255,255,0.85)",
+        ),
+        coloraxis_colorbar=dict(
+            title="Sharpe Ratio",
+            y=0.45,
+            len=0.65,
+            thickness=18,
+        ),
+        margin=dict(l=20, r=90, t=95, b=30),
     )
     return fig
 
